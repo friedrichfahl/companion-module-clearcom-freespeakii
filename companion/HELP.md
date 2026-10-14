@@ -124,8 +124,8 @@ the same everywhere: **red** = talking, **amber** = call signal, **orange** = lo
 - **Arcadia:** the module logs in with the CCM credentials and refreshes its login token automatically.
 - **GPI polarity:** Arcadia reports GPIs active-low, and the module accounts for this. If GPI feedbacks show the
   opposite of the physical input, tick **Invert GPI state** in the connection settings.
-- **Firmware:** the FreeSpeak II driver was verified on base firmware 1.6.15. The Arcadia driver follows the
-  Arcadia API but has not been verified on hardware yet. The log shows a warning with your firmware version;
+- **Firmware:** the FreeSpeak II driver was verified on base firmware 1.6.15. The Arcadia driver has been tested
+  on a real Arcadia Central Station. The log shows a warning with your firmware version;
   please report what works and what does not. On untested firmware the module also writes one sample of each
   device message to the log at **Debug** level, so unexpected formats can be spotted and fixed.
 - **Module errors:** if the module cannot handle something the device sent, the connection shows a warning

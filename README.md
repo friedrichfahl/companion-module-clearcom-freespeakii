@@ -42,13 +42,7 @@ Sources:
 - the Arcadia driver follows [companion-module-clearcom-rest](https://github.com/bitfocus/companion-module-clearcom-rest)
   and the Arcadia's own OpenAPI schema (`GET /api/1/schemas/clearcom_api.json`, Clear-Com API 1.0.1)
 
-**The Arcadia driver has not been run against real hardware yet.** Things to confirm on a real Arcadia:
-
-- whether `live:update` subscriptions and `EndpointInit` are needed or answered
-- whether the websocket upgrade works with the Bearer header
-- GPO control and the port GPO (call signal) route
-- the exact `GpiUpdated` / `GpoUpdated` shapes
-- whether participants in `/api/1/connections/liveStatus` carry `gid` / `res`
+The Arcadia driver has been tested against a real Arcadia Central Station.
 
 ## Layout
 
