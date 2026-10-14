@@ -1,0 +1,684 @@
+[
+	{
+		"id": 1,
+		"label": "Channel 1",
+		"participants": [
+			{
+				"device_id": 1,
+				"id": 37139,
+				"joinState": "Listen",
+				"label": "FSII-BP-37139",
+				"res": "/api/1/devices/1/endpoints/37139",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 37166,
+				"joinState": "Listen",
+				"label": "FSII-BP-37166",
+				"res": "/api/1/devices/1/endpoints/37166",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 37175,
+				"joinState": "Listen",
+				"label": "FSII-BP-37175",
+				"res": "/api/1/devices/1/endpoints/37175",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 37291,
+				"joinState": "Listen",
+				"label": "FSII-BP-37291",
+				"res": "/api/1/devices/1/endpoints/37291",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 47321,
+				"joinState": "Listen",
+				"label": "FSII-BP-47321",
+				"res": "/api/1/devices/1/endpoints/47321",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 47327,
+				"joinState": "Listen",
+				"label": "FSII-BP-47327",
+				"res": "/api/1/devices/1/endpoints/47327",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 49310,
+				"joinState": "Listen",
+				"label": "FSII-BP-49310",
+				"res": "/api/1/devices/1/endpoints/49310",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 59866,
+				"joinState": "Listen",
+				"label": "FSII-BP-59866",
+				"res": "/api/1/devices/1/endpoints/59866",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63184,
+				"joinState": "Listen",
+				"label": "FSII-BP-63184",
+				"res": "/api/1/devices/1/endpoints/63184",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63185,
+				"joinState": "Listen",
+				"label": "FSII-BP-63185",
+				"res": "/api/1/devices/1/endpoints/63185",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63206,
+				"joinState": "Listen",
+				"label": "FSII-BP-63206",
+				"res": "/api/1/devices/1/endpoints/63206",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506561,
+				"joinState": "Listen",
+				"label": "COMS OUT",
+				"res": "/api/1/devices/1/interfaces/256/ports/65537",
+				"state": "connected",
+				"type": "SA",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506563,
+				"joinState": "Talk-Listen",
+				"label": "Broadcast",
+				"res": "/api/1/devices/1/interfaces/257/ports/65792",
+				"state": "connected",
+				"type": "2W",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506567,
+				"joinState": "Talk-Listen",
+				"label": "4W-Port 1",
+				"res": "/api/1/devices/1/interfaces/259/ports/66304",
+				"state": "connected",
+				"type": "4W",
+				"events": { "call": false, "talk": false, "control": false }
+			}
+		],
+		"type": "partyline",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 2,
+		"label": "Channel 2",
+		"participants": [
+			{
+				"device_id": 1,
+				"id": 37291,
+				"joinState": "Listen",
+				"label": "FSII-BP-37291",
+				"res": "/api/1/devices/1/endpoints/37291",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 47321,
+				"joinState": "Listen",
+				"label": "FSII-BP-47321",
+				"res": "/api/1/devices/1/endpoints/47321",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 49310,
+				"joinState": "Listen",
+				"label": "FSII-BP-49310",
+				"res": "/api/1/devices/1/endpoints/49310",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 59866,
+				"joinState": "Listen",
+				"label": "FSII-BP-59866",
+				"res": "/api/1/devices/1/endpoints/59866",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63184,
+				"joinState": "Listen",
+				"label": "FSII-BP-63184",
+				"res": "/api/1/devices/1/endpoints/63184",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63185,
+				"joinState": "Listen",
+				"label": "FSII-BP-63185",
+				"res": "/api/1/devices/1/endpoints/63185",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63206,
+				"joinState": "Listen",
+				"label": "FSII-BP-63206",
+				"res": "/api/1/devices/1/endpoints/63206",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506564,
+				"joinState": "Talk-Listen",
+				"label": "FOH|AUDIO",
+				"res": "/api/1/devices/1/interfaces/257/ports/65793",
+				"state": "connected",
+				"type": "2W",
+				"events": { "call": false, "talk": false, "control": false }
+			}
+		],
+		"type": "partyline",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 3,
+		"label": "Channel 3",
+		"participants": [
+			{
+				"device_id": 1,
+				"id": 37291,
+				"joinState": "Listen",
+				"label": "FSII-BP-37291",
+				"res": "/api/1/devices/1/endpoints/37291",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 47321,
+				"joinState": "Listen",
+				"label": "FSII-BP-47321",
+				"res": "/api/1/devices/1/endpoints/47321",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 49310,
+				"joinState": "Listen",
+				"label": "FSII-BP-49310",
+				"res": "/api/1/devices/1/endpoints/49310",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 59866,
+				"joinState": "Listen",
+				"label": "FSII-BP-59866",
+				"res": "/api/1/devices/1/endpoints/59866",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63184,
+				"joinState": "Listen",
+				"label": "FSII-BP-63184",
+				"res": "/api/1/devices/1/endpoints/63184",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63185,
+				"joinState": "Listen",
+				"label": "FSII-BP-63185",
+				"res": "/api/1/devices/1/endpoints/63185",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63206,
+				"joinState": "Listen",
+				"label": "FSII-BP-63206",
+				"res": "/api/1/devices/1/endpoints/63206",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506566,
+				"joinState": "Talk-Listen",
+				"label": "Producer",
+				"res": "/api/1/devices/1/interfaces/258/ports/66049",
+				"state": "connected",
+				"type": "2W",
+				"events": { "call": false, "talk": false, "control": false }
+			}
+		],
+		"type": "partyline",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 4,
+		"label": "Channel 4",
+		"participants": [
+			{
+				"device_id": 1,
+				"id": 37291,
+				"joinState": "Listen",
+				"label": "FSII-BP-37291",
+				"res": "/api/1/devices/1/endpoints/37291",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 49310,
+				"joinState": "Listen",
+				"label": "FSII-BP-49310",
+				"res": "/api/1/devices/1/endpoints/49310",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63184,
+				"joinState": "Listen",
+				"label": "FSII-BP-63184",
+				"res": "/api/1/devices/1/endpoints/63184",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63185,
+				"joinState": "Talk",
+				"label": "FSII-BP-63185",
+				"res": "/api/1/devices/1/endpoints/63185",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63206,
+				"joinState": "Talk-Listen",
+				"label": "FSII-BP-63206",
+				"res": "/api/1/devices/1/endpoints/63206",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			}
+		],
+		"type": "partyline",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 5,
+		"label": "Channel 5",
+		"participants": [],
+		"type": "partyline",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 6,
+		"label": "Channel 6",
+		"participants": [],
+		"type": "partyline",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 7,
+		"label": "Channel 7",
+		"participants": [],
+		"type": "partyline",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 8,
+		"label": "Channel 8",
+		"participants": [],
+		"type": "partyline",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 9,
+		"label": "Channel 9",
+		"participants": [],
+		"type": "partyline",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 16,
+		"label": "Channel 16",
+		"participants": [],
+		"type": "group",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 17,
+		"label": "Channel 17",
+		"participants": [],
+		"type": "group",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 18,
+		"label": "Channel 18",
+		"participants": [],
+		"type": "group",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 19,
+		"label": "Channel 19",
+		"participants": [],
+		"type": "group",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 20,
+		"label": "Channel 20",
+		"participants": [],
+		"type": "group",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 21,
+		"label": "Channel 21",
+		"participants": [],
+		"type": "group",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 22,
+		"label": "Channel 22",
+		"participants": [],
+		"type": "group",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 23,
+		"label": "Channel 23",
+		"participants": [],
+		"type": "group",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 24,
+		"label": "Channel 24",
+		"participants": [],
+		"type": "group",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 10,
+		"label": "Channel 10",
+		"participants": [
+			{
+				"device_id": 1,
+				"id": 63184,
+				"joinState": "Listen",
+				"label": "FSII-BP-63184",
+				"res": "/api/1/devices/1/endpoints/63184",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63185,
+				"joinState": "Listen",
+				"label": "FSII-BP-63185",
+				"res": "/api/1/devices/1/endpoints/63185",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 63206,
+				"joinState": "Listen",
+				"label": "FSII-BP-63206",
+				"res": "/api/1/devices/1/endpoints/63206",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			}
+		],
+		"type": "partyline",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 11,
+		"label": "Channel 11",
+		"participants": [],
+		"type": "partyline",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 12,
+		"label": "Channel 12",
+		"participants": [
+			{
+				"device_id": 1,
+				"id": 47321,
+				"joinState": "Listen",
+				"label": "FSII-BP-47321",
+				"res": "/api/1/devices/1/endpoints/47321",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 49310,
+				"joinState": "Listen",
+				"label": "FSII-BP-49310",
+				"res": "/api/1/devices/1/endpoints/49310",
+				"state": "connected",
+				"type": "FSII-BP",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506560,
+				"joinState": "Talk",
+				"label": "Program",
+				"res": "/api/1/devices/1/interfaces/256/ports/65536",
+				"state": "connected",
+				"type": "PGM",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506565,
+				"joinState": "Talk-Listen",
+				"label": "Program",
+				"res": "/api/1/devices/1/interfaces/258/ports/66048",
+				"state": "connected",
+				"type": "2W",
+				"events": { "call": false, "talk": false, "control": false }
+			}
+		],
+		"type": "partyline",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 13,
+		"label": "Channel 13",
+		"participants": [],
+		"type": "group",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 14,
+		"label": "Channel 14",
+		"participants": [],
+		"type": "group",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 15,
+		"label": "Channel 15",
+		"participants": [],
+		"type": "group",
+		"events": { "call": false, "talk": false, "control": false }
+	},
+	{
+		"id": 255,
+		"label": "Channel 255",
+		"participants": [
+			{
+				"device_id": 1,
+				"id": 61506563,
+				"joinState": "Listen",
+				"label": "Broadcast",
+				"res": "/api/1/devices/1/interfaces/257/ports/65792",
+				"state": "connected",
+				"type": "2W",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506564,
+				"joinState": "Listen",
+				"label": "FOH|AUDIO",
+				"res": "/api/1/devices/1/interfaces/257/ports/65793",
+				"state": "connected",
+				"type": "2W",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506565,
+				"joinState": "Listen",
+				"label": "Program",
+				"res": "/api/1/devices/1/interfaces/258/ports/66048",
+				"state": "connected",
+				"type": "2W",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506566,
+				"joinState": "Listen",
+				"label": "Producer",
+				"res": "/api/1/devices/1/interfaces/258/ports/66049",
+				"state": "connected",
+				"type": "2W",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506567,
+				"joinState": "Listen",
+				"label": "4W-Port 1",
+				"res": "/api/1/devices/1/interfaces/259/ports/66304",
+				"state": "connected",
+				"type": "4W",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506568,
+				"joinState": "Listen",
+				"label": "4W-Port 2",
+				"res": "/api/1/devices/1/interfaces/259/ports/66305",
+				"state": "connected",
+				"type": "4W",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506569,
+				"joinState": "Listen",
+				"label": "4W-Port 3",
+				"res": "/api/1/devices/1/interfaces/260/ports/66560",
+				"state": "connected",
+				"type": "4W",
+				"events": { "call": false, "talk": false, "control": false }
+			},
+			{
+				"device_id": 1,
+				"id": 61506570,
+				"joinState": "Listen",
+				"label": "4W-Port 4",
+				"res": "/api/1/devices/1/interfaces/260/ports/66561",
+				"state": "connected",
+				"type": "4W",
+				"events": { "call": false, "talk": false, "control": false }
+			}
+		],
+		"type": "UNKNOWN",
+		"events": { "call": false, "talk": false, "control": false }
+	}
+]

@@ -1,0 +1,5 @@
+[
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.callState", "value": 1 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.callState", "value": 0 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.callState", "value": 0 } }
+]

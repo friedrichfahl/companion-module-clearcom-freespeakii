@@ -1,6 +1,10 @@
 MIT License
 
+Copyright (c) 2026 Friedrich Fahl
 Copyright (c) 2022 Bitfocus AS - Open Source
+
+Portions of this module are derived from companion-module-clearcom-freespeakii and
+companion-module-clearcom-rest, both published by Bitfocus AS under the MIT License.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

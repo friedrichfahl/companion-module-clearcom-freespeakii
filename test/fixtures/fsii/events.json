@@ -1,0 +1,1911 @@
+[
+	{
+		"event": "EndpointInit",
+		"data": {
+			"result": [
+				{
+					"res": "/api/1/devices/1/endpoints/1000000",
+					"id": 1000000,
+					"device_id": 1,
+					"label": "TCVR1",
+					"type": "FSII-Antenna",
+					"liveStatus": { "status": "online", "frequencyType": "1.9", "syncState": "base" },
+					"settings": { "syncOffset": 1 },
+					"versionSW": "2.7.28.0",
+					"updateRequired": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/1000001",
+					"id": 1000001,
+					"device_id": 1,
+					"label": "TCVR2",
+					"type": "FSII-Antenna",
+					"liveStatus": { "status": "online", "frequencyType": "1.9", "syncState": "base" },
+					"settings": { "syncOffset": 1 },
+					"versionSW": "2.7.28.0",
+					"updateRequired": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/1000002",
+					"id": 1000002,
+					"device_id": 1,
+					"label": "TCVR3",
+					"type": "FSII-Antenna",
+					"liveStatus": { "status": "online", "frequencyType": "1.9", "syncState": "base" },
+					"settings": { "syncOffset": 1 },
+					"versionSW": "2.7.28.0",
+					"updateRequired": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/1000003",
+					"id": 1000003,
+					"device_id": 1,
+					"label": "TCVR4",
+					"type": "FSII-Antenna",
+					"liveStatus": { "status": "online", "frequencyType": "1.9", "syncState": "base" },
+					"settings": { "syncOffset": 1 },
+					"versionSW": "3.6.28.0",
+					"updateRequired": true
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/1000004",
+					"id": 1000004,
+					"device_id": 1,
+					"label": "TCVR5",
+					"type": "FSII-Antenna",
+					"liveStatus": { "status": "online", "frequencyType": "1.9", "syncState": "base" },
+					"settings": { "syncOffset": 1 },
+					"versionSW": "2.7.28.0",
+					"updateRequired": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/1000005",
+					"id": 1000005,
+					"device_id": 1,
+					"label": "TCVR6",
+					"type": "FSII-Antenna",
+					"liveStatus": {},
+					"settings": { "syncOffset": 1 },
+					"versionSW": "3.6.28.0",
+					"updateRequired": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/1000006",
+					"id": 1000006,
+					"device_id": 1,
+					"label": "TCVR7",
+					"type": "FSII-Antenna",
+					"liveStatus": {},
+					"settings": { "syncOffset": 1 },
+					"versionSW": "3.6.28.0",
+					"updateRequired": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/1000007",
+					"id": 1000007,
+					"device_id": 1,
+					"label": "TCVR8",
+					"type": "FSII-Antenna",
+					"liveStatus": {},
+					"settings": { "syncOffset": 1 },
+					"versionSW": "2.7.28.0",
+					"updateRequired": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/1000008",
+					"id": 1000008,
+					"device_id": 1,
+					"label": "TCVR9",
+					"type": "FSII-Antenna",
+					"liveStatus": {},
+					"settings": { "syncOffset": 1 },
+					"versionSW": "2.7.28.0",
+					"updateRequired": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/1000009",
+					"id": 1000009,
+					"device_id": 1,
+					"label": "TCVR10",
+					"type": "FSII-Antenna",
+					"liveStatus": {},
+					"settings": { "syncOffset": 1 },
+					"versionSW": "2.7.28.0",
+					"updateRequired": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/37044",
+					"id": 37044,
+					"device_id": 1,
+					"label": "FSII-BP-37044",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 2,
+						"antennaSlot": 1,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 80 },
+							{ "keysetIndex": 1, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 2, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 3, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 100 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 100,
+						"RSSI": 47,
+						"linkQuality": 54,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 18, "minutes": 0 }
+					},
+					"role": { "id": 11, "isDefault": false, "label": "Role 11", "res": "/api/1/roles/11" },
+					"settings": { "default_role": 11 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/37139",
+					"id": 37139,
+					"device_id": 1,
+					"label": "FSII-BP-37139",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 2,
+						"antennaSlot": 1,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 80 },
+							{ "keysetIndex": 1, "currentState": "off", "volume": 60 },
+							{ "keysetIndex": 2, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 3, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 56 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 71,
+						"RSSI": 45,
+						"linkQuality": 48,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 12, "minutes": 10 }
+					},
+					"role": { "id": 7, "isDefault": false, "label": "Role 7", "res": "/api/1/roles/7" },
+					"settings": { "default_role": 7 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/37175",
+					"id": 37175,
+					"device_id": 1,
+					"label": "FSII-BP-37175",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 2,
+						"antennaSlot": 4,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 86 },
+							{ "keysetIndex": 1, "currentState": "off", "volume": 53 },
+							{ "keysetIndex": 2, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 3, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 56 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 90,
+						"RSSI": 49,
+						"linkQuality": 61,
+						"frameErrorRate": 1,
+						"longevity": { "hours": 16, "minutes": 0 }
+					},
+					"role": { "id": 8, "isDefault": false, "label": "Role 8", "res": "/api/1/roles/8" },
+					"settings": { "default_role": 8 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/37166",
+					"id": 37166,
+					"device_id": 1,
+					"label": "FSII-BP-37166",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 1,
+						"antennaSlot": 3,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+							{ "keysetIndex": 1, "currentState": "off", "volume": 53 },
+							{ "keysetIndex": 2, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 69 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 90,
+						"RSSI": 48,
+						"linkQuality": 58,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 16, "minutes": 0 }
+					},
+					"role": { "id": 9, "isDefault": false, "label": "Role 9", "res": "/api/1/roles/9" },
+					"settings": { "default_role": 9 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/37149",
+					"id": 37149,
+					"device_id": 1,
+					"label": "FSII-BP-37149",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 2,
+						"antennaSlot": 1,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 100 },
+							{ "keysetIndex": 1, "currentState": "off", "volume": 53 },
+							{ "keysetIndex": 2, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 3, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 69 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 100,
+						"RSSI": 52,
+						"linkQuality": 70,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 18, "minutes": 0 }
+					},
+					"role": { "id": 10, "isDefault": false, "label": "Role 10", "res": "/api/1/roles/10" },
+					"settings": { "default_role": 10 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/37257",
+					"id": 37257,
+					"device_id": 1,
+					"label": "FSII-BP-37257",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 1,
+						"antennaSlot": 0,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 40 },
+							{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 46 },
+							{ "keysetIndex": 2, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 3, "currentState": "off", "volume": 0 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 47 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 100,
+						"RSSI": 47,
+						"linkQuality": 54,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 18, "minutes": 0 }
+					},
+					"settings": { "default_role": 0 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/37291",
+					"id": 37291,
+					"device_id": 1,
+					"label": "FSII-BP-37291",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 1,
+						"antennaSlot": 2,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 80 },
+							{ "keysetIndex": 1, "currentState": "listen", "volume": 13 },
+							{ "keysetIndex": 2, "currentState": "listen", "volume": 13 },
+							{ "keysetIndex": 3, "currentState": "listen", "volume": 6 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 100,
+						"RSSI": 45,
+						"linkQuality": 48,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 18, "minutes": 0 }
+					},
+					"settings": { "default_role": 0 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/37160",
+					"id": 37160,
+					"device_id": 1,
+					"label": "FSII-BP-37160",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 2,
+						"antennaSlot": 0,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+							{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+							{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+							{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 47 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 100,
+						"RSSI": 47,
+						"linkQuality": 54,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 18, "minutes": 0 }
+					},
+					"role": { "id": 32, "isDefault": false, "label": "Role 32", "res": "/api/1/roles/32" },
+					"settings": { "default_role": 32 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/37240",
+					"id": 37240,
+					"device_id": 1,
+					"label": "FSII-BP-37240",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 1,
+						"antennaSlot": 3,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+							{ "keysetIndex": 1, "currentState": "off", "volume": 46 },
+							{ "keysetIndex": 2, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 3, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 56 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 100,
+						"RSSI": 43,
+						"linkQuality": 41,
+						"frameErrorRate": 1,
+						"longevity": { "hours": 18, "minutes": 0 }
+					},
+					"role": { "id": 13, "isDefault": false, "label": "Role 13", "res": "/api/1/roles/13" },
+					"settings": { "default_role": 13 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/37057",
+					"id": 37057,
+					"device_id": 1,
+					"label": "FSII-BP-37057",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 1,
+						"antennaSlot": 1,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 66 },
+							{ "keysetIndex": 1, "currentState": "off", "volume": 0 },
+							{ "keysetIndex": 2, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 3, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 100 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 100,
+						"RSSI": 48,
+						"linkQuality": 58,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 18, "minutes": 0 }
+					},
+					"role": { "id": 30, "isDefault": false, "label": "Role 30", "res": "/api/1/roles/30" },
+					"settings": { "default_role": 30 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/49310",
+					"id": 49310,
+					"device_id": 1,
+					"label": "FSII-BP-49310",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 1,
+						"antennaSlot": 0,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 40 },
+							{ "keysetIndex": 1, "currentState": "listen", "volume": 0 },
+							{ "keysetIndex": 2, "currentState": "listen", "volume": 100 },
+							{ "keysetIndex": 3, "currentState": "listen", "volume": 80 },
+							{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 87,
+						"RSSI": 46,
+						"linkQuality": 51,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 15, "minutes": 20 }
+					},
+					"settings": { "default_role": 0 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/47327",
+					"id": 47327,
+					"device_id": 1,
+					"label": "FSII-BP-47327",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 1,
+						"antennaSlot": 4,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 13 },
+							{ "keysetIndex": 1, "currentState": "off", "volume": 80 },
+							{ "keysetIndex": 2, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 3, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 69 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 100,
+						"RSSI": 46,
+						"linkQuality": 51,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 18, "minutes": 0 }
+					},
+					"role": { "id": 20, "isDefault": false, "label": "Role 20", "res": "/api/1/roles/20" },
+					"settings": { "default_role": 20 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/44963",
+					"id": 44963,
+					"device_id": 1,
+					"label": "FSII-BP-44963",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 1,
+						"antennaSlot": 0,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 66 },
+							{ "keysetIndex": 1, "currentState": "listen", "volume": 6 },
+							{ "keysetIndex": 2, "currentState": "listen", "volume": 33 },
+							{ "keysetIndex": 3, "currentState": "off", "volume": 0 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 100,
+						"RSSI": 49,
+						"linkQuality": 61,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 18, "minutes": 0 }
+					},
+					"settings": { "default_role": 0 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/48106",
+					"id": 48106,
+					"device_id": 1,
+					"label": "FSII-BP-48106",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 1,
+						"antennaSlot": 0,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "talk+listen", "volume": 53 },
+							{ "keysetIndex": 1, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 2, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 3, "currentState": "off", "volume": -1 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 47 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 52,
+						"RSSI": 49,
+						"linkQuality": 61,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 8, "minutes": 20 }
+					},
+					"role": { "id": 46, "isDefault": false, "label": "Role 46", "res": "/api/1/roles/46" },
+					"settings": { "default_role": 46 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/47321",
+					"id": 47321,
+					"device_id": 1,
+					"label": "FSII-BP-47321",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 1,
+						"antennaSlot": 4,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+							{ "keysetIndex": 1, "currentState": "listen", "volume": 20 },
+							{ "keysetIndex": 2, "currentState": "listen", "volume": 26 },
+							{ "keysetIndex": 3, "currentState": "listen", "volume": 0 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 100,
+						"RSSI": 49,
+						"linkQuality": 61,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 18, "minutes": 0 }
+					},
+					"settings": { "default_role": 0 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/63185",
+					"id": 63185,
+					"device_id": 1,
+					"label": "FSII-BP-63185",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "online",
+						"role": 49,
+						"antennaIndex": 2,
+						"antennaSlot": 0,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+							{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+							{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+							{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+							{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 91,
+						"RSSI": 44,
+						"linkQuality": 45,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 16, "minutes": 10 }
+					},
+					"role": { "id": 49, "isDefault": false, "label": "Role 49", "res": "/api/1/roles/49" },
+					"settings": { "default_role": 49 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/61992",
+					"id": 61992,
+					"device_id": 1,
+					"label": "FSII-BP-61992",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "offline",
+						"role": 65535,
+						"antennaIndex": 1,
+						"antennaSlot": 2,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 13 },
+							{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+							{ "keysetIndex": 2, "currentState": "listen", "volume": 20 },
+							{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 47 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 90,
+						"RSSI": 47,
+						"linkQuality": 54,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 16, "minutes": 0 }
+					},
+					"role": { "id": 38, "isDefault": false, "label": "Role 38", "res": "/api/1/roles/38" },
+					"settings": { "default_role": 38 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/63184",
+					"id": 63184,
+					"device_id": 1,
+					"label": "FSII-BP-63184",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "online",
+						"role": 35,
+						"antennaIndex": 1,
+						"antennaSlot": 0,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+							{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+							{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+							{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+							{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 100,
+						"RSSI": 46,
+						"linkQuality": 51,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 18, "minutes": 0 },
+						"callState": 0
+					},
+					"role": { "id": 35, "isDefault": false, "label": "Role 35", "res": "/api/1/roles/35" },
+					"settings": { "default_role": 35 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/59866",
+					"id": 59866,
+					"device_id": 1,
+					"label": "FSII-BP-59866",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "online",
+						"role": 29,
+						"antennaIndex": 2,
+						"antennaSlot": 2,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+							{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+							{ "keysetIndex": 2, "currentState": "listen", "volume": 46 },
+							{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+							{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 89,
+						"RSSI": 49,
+						"linkQuality": 61,
+						"frameErrorRate": 1,
+						"longevity": { "hours": 15, "minutes": 50 }
+					},
+					"role": { "id": 29, "isDefault": false, "label": "Role 29", "res": "/api/1/roles/29" },
+					"settings": { "default_role": 29 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				},
+				{
+					"res": "/api/1/devices/1/endpoints/63206",
+					"id": 63206,
+					"device_id": 1,
+					"label": "FSII-BP-63206",
+					"type": "FSII-BP",
+					"frequencyType": "1.9",
+					"liveStatus": {
+						"status": "online",
+						"role": 27,
+						"antennaIndex": 1,
+						"antennaSlot": 1,
+						"keyState": [
+							{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+							{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+							{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+							{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+							{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+						],
+						"batteryType": "Li-Ion",
+						"batteryLevel": 100,
+						"RSSI": 48,
+						"linkQuality": 58,
+						"frameErrorRate": 0,
+						"longevity": { "hours": 18, "minutes": 0 }
+					},
+					"role": { "id": 27, "isDefault": false, "label": "Role 27", "res": "/api/1/roles/27" },
+					"settings": { "default_role": 27 },
+					"versionSW": "5.4.32.0",
+					"updateRequired": false,
+					"callState": false
+				}
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 49 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 61 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 49 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 61 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 43 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 41 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.frameErrorRate", "value": 0 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 47 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 54 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 48 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 58 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 41 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 35 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 52 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 70 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 49 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 61 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 47 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 54 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 50 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 64 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63184,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 48 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 58 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63184,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63184,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 45 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 48 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63184,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 42 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 38 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63184,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 49 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 61 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63184,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63184,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63184,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "talk+listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 42 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 38 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 47 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 54 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.frameErrorRate", "value": 1 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.antennaIndex", "value": 0 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.antennaSlot", "value": 0 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.antennaIndex", "value": 3 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 49 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 61 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.antennaIndex", "value": 1 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.antennaSlot", "value": 2 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 26 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 45 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 48 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 52 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 70 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 47 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 54 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 54 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 77 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.frameErrorRate", "value": 0 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 46 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 51 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 46 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 51 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 51 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 67 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 48 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 58 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 50 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 64 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 49 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 61 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 49 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 61 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 52 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 70 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 59866,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 0 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 3, "currentState": "off", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "off", "volume": 60 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.antennaIndex", "value": 2 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.antennaSlot", "value": 1 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 45 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 48 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63184,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 4, "currentState": "talk+listen", "volume": 60 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 26 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63184,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 4, "currentState": "talk+listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63184,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 4, "currentState": "talk+listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "talk+listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 26 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 47 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 54 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "talk+listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63184,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 4, "currentState": "talk+listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 26 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63206,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 46 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 60 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "talk+listen", "volume": 34 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 48 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 58 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 54 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 77 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 47 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 54 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 49 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 61 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 47 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 54 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.frameErrorRate", "value": 1 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 48 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 58 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 48 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 58 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.frameErrorRate", "value": 1 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.frameErrorRate", "value": 0 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 49 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 61 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 50 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 64 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 51 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 67 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.frameErrorRate", "value": 2 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 53 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 74 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.frameErrorRate", "value": 1 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 47 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 54 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 51 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 67 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.frameErrorRate", "value": 1 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 55 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 80 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.frameErrorRate", "value": 0 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 50 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 64 } },
+	{
+		"event": "EndpointUpdated",
+		"data": {
+			"endpointId": 63185,
+			"path": "liveStatus.keyState",
+			"value": [
+				{ "keysetIndex": 0, "currentState": "listen", "volume": 33 },
+				{ "keysetIndex": 1, "currentState": "listen", "volume": 26 },
+				{ "keysetIndex": 2, "currentState": "listen", "volume": 40 },
+				{ "keysetIndex": 3, "currentState": "listen", "volume": 53 },
+				{ "keysetIndex": 4, "currentState": "listen", "volume": 34 }
+			]
+		}
+	},
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.antennaIndex", "value": 1 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.antennaSlot", "value": 2 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 46 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 51 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.frameErrorRate", "value": 0 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 52 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 70 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 49 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 61 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.frameErrorRate", "value": 0 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 47 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 54 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 50 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 64 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 55 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 80 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 50 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 64 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 51 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 67 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.frameErrorRate", "value": 1 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 54 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 77 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 49 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 61 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 46 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 51 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 50 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 64 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 55 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 80 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.RSSI", "value": 48 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63184, "path": "liveStatus.linkQuality", "value": 58 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.RSSI", "value": 49 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63206, "path": "liveStatus.linkQuality", "value": 61 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.RSSI", "value": 52 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 63185, "path": "liveStatus.linkQuality", "value": 70 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.RSSI", "value": 47 } },
+	{ "event": "EndpointUpdated", "data": { "endpointId": 59866, "path": "liveStatus.linkQuality", "value": 54 } }
+]

@@ -3,24 +3,28 @@ import type ModuleInstance from './main.js'
 import {
 	connectionChoices,
 	firstId,
-	targetFields,
 	gpioChoices,
 	KEY_CHOICES,
 	portChoices,
 	roleChoices,
 	targetChoices,
+	targetFields,
 } from './choices.js'
 import {
 	batteryLevel,
 	channelCallers,
 	channelTalkers,
+	gpioActive,
 	isCalling,
 	isOnline,
 	isTalking,
+	linkQuality,
 	lowBatteryPacks,
 	missingRoles,
+	packs,
 	portInChannel,
 	resolveTargets,
+	type KeySelector,
 } from './resolve.js'
 
 type Targets = { targets: string[]; names: string }
@@ -36,6 +40,7 @@ export type FeedbacksSchema = {
 	port_in_channel: { type: 'boolean'; options: { port: number; connection: number } }
 	any_battery_below: { type: 'boolean'; options: { threshold: number } }
 	any_role_missing: { type: 'boolean'; options: { roles: number[] } }
+	any_calling: { type: 'boolean'; options: Record<string, never> }
 	gpi_state: { type: 'boolean'; options: { gpi: number } }
 	gpo_state: { type: 'boolean'; options: { gpo: number } }
 	base_connected: { type: 'boolean'; options: Record<string, never> }
@@ -50,6 +55,14 @@ export const COLORS = {
 	orange: combineRgb(230, 90, 0),
 	grey: combineRgb(60, 60, 60),
 	dimText: combineRgb(140, 140, 140),
+	darkRed: combineRgb(90, 0, 0),
+	darkGreen: combineRgb(0, 60, 0),
+}
+
+export function toKeySelector(key: unknown): KeySelector {
+	if (key === 'any' || key === 'reply') return key
+	const n = Number(key)
+	return Number.isInteger(n) ? n : 'any'
 }
 
 export function UpdateFeedbacks(self: ModuleInstance): void {
@@ -72,37 +85,37 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 		default: firstId(connections, 1),
 	} as const
 
-	/** Packs for a feedback, or [] while the state is still loading so buttons show "unknown", not stale data. */
+	/** Devices for a feedback, or [] while the state is still loading so buttons show "unknown", not stale data. */
 	const packsFor = (o: Targets) => (state.ready ? resolveTargets(state, o.targets, o.names) : [])
 
 	const feedbacks: CompanionFeedbackDefinitions<FeedbacksSchema> = {
 		role_talking: {
 			type: 'boolean',
-			name: 'Role / pack is talking',
+			name: 'Role / device is talking',
 			defaultStyle: { bgcolor: COLORS.red, color: COLORS.white },
 			options: [...targetOptions, { id: 'key', type: 'dropdown', label: 'Key', choices: KEY_CHOICES, default: 'any' }],
 			callback: ({ options }) => {
-				const key = options.key === 'any' ? 'any' : Number(options.key)
-				return packsFor(options).some((e) => isTalking(e, key))
+				const key = toKeySelector(options.key)
+				return packsFor(options).some((e) => isTalking(state, e, key))
 			},
 		},
 		role_online: {
 			type: 'boolean',
-			name: 'Role / pack is online',
+			name: 'Role / device is online',
 			defaultStyle: { bgcolor: COLORS.green, color: COLORS.white },
 			options: [...targetOptions],
 			callback: ({ options }) => packsFor(options).some(isOnline),
 		},
 		role_calling: {
 			type: 'boolean',
-			name: 'Role / pack has a call signal active',
+			name: 'Role / device has a call signal active',
 			defaultStyle: { bgcolor: COLORS.amber, color: COLORS.black },
 			options: [...targetOptions],
 			callback: ({ options }) => packsFor(options).some(isCalling),
 		},
 		role_battery_below: {
 			type: 'boolean',
-			name: 'Role / pack battery below threshold',
+			name: 'Role / device battery below threshold',
 			defaultStyle: { bgcolor: COLORS.orange, color: COLORS.white },
 			options: [...targetOptions, thresholdOption('Battery below (%)', 20)],
 			callback: ({ options }) =>
@@ -113,11 +126,14 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 		},
 		role_signal_below: {
 			type: 'boolean',
-			name: 'Role / pack link quality below threshold',
+			name: 'Role / device link quality below threshold',
 			defaultStyle: { bgcolor: COLORS.orange, color: COLORS.white },
 			options: [...targetOptions, thresholdOption('Link quality below', 30)],
 			callback: ({ options }) =>
-				packsFor(options).some((e) => isOnline(e) && (e.liveStatus?.linkQuality ?? 100) < options.threshold),
+				packsFor(options).some((e) => {
+					const q = linkQuality(e)
+					return q !== undefined && q < options.threshold
+				}),
 		},
 		channel_talking: {
 			type: 'boolean',
@@ -129,14 +145,14 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 		channel_calling: {
 			type: 'boolean',
 			name: 'Channel: someone is calling',
-			description: 'A member pack or port has a call signal active',
+			description: 'A member device or port has a call signal active',
 			defaultStyle: { bgcolor: COLORS.amber, color: COLORS.black },
 			options: [connectionOption],
 			callback: ({ options }) => state.ready && channelCallers(state, options.connection).length > 0,
 		},
 		port_in_channel: {
 			type: 'boolean',
-			name: 'Base port is routed to channel',
+			name: 'Port is routed to channel',
 			defaultStyle: { bgcolor: COLORS.green, color: COLORS.white },
 			options: [
 				{ id: 'port', type: 'dropdown', label: 'Port', choices: ports, default: firstId(ports, 0) },
@@ -146,14 +162,14 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 		},
 		any_battery_below: {
 			type: 'boolean',
-			name: 'Any online pack battery below threshold',
+			name: 'Any online device battery below threshold',
 			defaultStyle: { bgcolor: COLORS.orange, color: COLORS.white },
 			options: [thresholdOption('Battery below (%)', 20)],
 			callback: ({ options }) => state.ready && lowBatteryPacks(state, options.threshold).length > 0,
 		},
 		any_role_missing: {
 			type: 'boolean',
-			name: 'Any expected role has no pack online',
+			name: 'Any expected role has no device online',
 			defaultStyle: { bgcolor: COLORS.red, color: COLORS.white },
 			options: [
 				{
@@ -167,23 +183,30 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 			],
 			callback: ({ options }) => state.ready && missingRoles(state, options.roles ?? []).length > 0,
 		},
+		any_calling: {
+			type: 'boolean',
+			name: 'Any device has a call signal active',
+			defaultStyle: { bgcolor: COLORS.amber, color: COLORS.black },
+			options: [],
+			callback: () => state.ready && packs(state).some(isCalling),
+		},
 		gpi_state: {
 			type: 'boolean',
-			name: 'Base GPI is active',
+			name: 'GPI is active',
 			defaultStyle: { bgcolor: COLORS.green, color: COLORS.white },
 			options: [{ id: 'gpi', type: 'dropdown', label: 'GPI', choices: gpis, default: firstId(gpis, 0) }],
-			callback: ({ options }) => !!state.gpis.get(options.gpi)?.liveStatus?.status,
+			callback: ({ options }) => gpioActive(state, 'gpi', state.gpis.get(options.gpi)),
 		},
 		gpo_state: {
 			type: 'boolean',
-			name: 'Base GPO is active',
+			name: 'GPO is active',
 			defaultStyle: { bgcolor: COLORS.green, color: COLORS.white },
 			options: [{ id: 'gpo', type: 'dropdown', label: 'GPO', choices: gpos, default: firstId(gpos, 0) }],
-			callback: ({ options }) => !!state.gpos.get(options.gpo)?.liveStatus?.status,
+			callback: ({ options }) => gpioActive(state, 'gpo', state.gpos.get(options.gpo)),
 		},
 		base_connected: {
 			type: 'boolean',
-			name: 'Connected to the base',
+			name: 'Connected to the device',
 			defaultStyle: { bgcolor: COLORS.green, color: COLORS.white },
 			options: [],
 			callback: () => self.socketConnected && state.ready,

@@ -2,10 +2,10 @@
 	"$schema": "../node_modules/@companion-module/base/assets/manifest.schema.json",
 	"type": "connection",
 	"id": "clearcom-freespeakii",
-	"name": "Clear-Com FreeSpeak II",
+	"name": "Clear-Com FreeSpeak II / Arcadia",
 	"shortname": "freespeakii",
-	"description": "Clear-Com FreeSpeak II base station: beltpack tallies, battery/status, call signals, RMK, role and port routing",
-	"version": "0.1.0",
+	"description": "Clear-Com Arcadia Central Station and FreeSpeak II base: role tallies, battery/status, call signals, RMK, role and port routing, GPIO",
+	"version": "0.2.1",
 	"license": "MIT",
 	"repository": "git+https://github.com/bitfocus/companion-module-clearcom-freespeakii.git",
 	"bugs": "https://github.com/bitfocus/companion-module-clearcom-freespeakii/issues",
@@ -13,6 +13,10 @@
 		{
 			"name": "Javen Kazebee",
 			"email": "javen.kazebee@gmail.com"
+		},
+		{
+			"name": "Friedrich Fahl",
+			"email": "license@gersa-events.com"
 		}
 	],
 	"runtime": {
@@ -23,6 +27,6 @@
 	},
 	"legacyIds": [],
 	"manufacturer": "Clear-Com",
-	"products": ["FreeSpeak II", "FSII-BASE-II"],
-	"keywords": ["intercom", "wireless", "beltpack", "partyline", "tally"]
+	"products": ["Arcadia Central Station", "FreeSpeak II", "FSII-BASE-II"],
+	"keywords": ["intercom", "wireless", "beltpack", "partyline", "tally", "Arcadia", "FreeSpeak", "HelixNet"]
 }
