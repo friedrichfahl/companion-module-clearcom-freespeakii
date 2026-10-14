@@ -42,7 +42,7 @@ Sources:
 - the Arcadia driver follows [companion-module-clearcom-rest](https://github.com/bitfocus/companion-module-clearcom-rest)
   and the Arcadia's own OpenAPI schema (`GET /api/1/schemas/clearcom_api.json`, Clear-Com API 1.0.1)
 
-The Arcadia driver has been tested against a real Arcadia Central Station.
+The Arcadia driver has been tested against a real Arcadia Central Station on firmware 4.2.83.11-0.
 
 ## Layout
 

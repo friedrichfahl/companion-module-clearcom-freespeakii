@@ -101,6 +101,8 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 	#reportedBugs = new Set<string>()
 	/** Raw payload samples already logged (only on firmware the module has not been verified against). */
 	#sampled = new Set<string>()
+	/** Samples taken before the firmware version is known, logged by #logSamples if it turns out untested. */
+	#pendingSamples: [string, unknown][] = []
 
 	constructor(internal: unknown) {
 		super(internal)
@@ -128,6 +130,7 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 		this.#warnedVersion = false
 		this.#reportedBugs.clear()
 		this.#sampled.clear()
+		this.#pendingSamples = []
 		this.#defineAll()
 		this.#start()
 	}
@@ -370,7 +373,12 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 	 * expect yet can be seen in Companion's log (Debug filter) and fixed.
 	 */
 	#logSample(key: string, data: unknown): void {
-		if (data === undefined || this.#sampled.has(key) || this.#firmwareTested()) return
+		if (data === undefined || this.#sampled.has(key)) return
+		if (this.driver?.testedVersions.length && this.state.device?.version === undefined) {
+			this.#pendingSamples.push([key, data])
+			return
+		}
+		if (this.#firmwareTested()) return
 		this.#sampled.add(key)
 		let json: string
 		try {
@@ -389,7 +397,10 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 		gpio: unknown
 		roles: unknown
 	}): void {
+		const pending = this.#pendingSamples
+		this.#pendingSamples = []
 		if (this.#firmwareTested()) return
+		for (const [key, data] of pending) this.#logSample(key, data)
 		const endpoints = asList<Endpoint>(load.endpoints)
 		// a device with live key states shows the most; add a gateway (antenna / transceiver) for its fields
 		const withKeys = endpoints.find((e) => e?.liveStatus?.keyState !== undefined)

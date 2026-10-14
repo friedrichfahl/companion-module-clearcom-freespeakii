@@ -118,7 +118,7 @@ export class ArcadiaDriver implements DeviceDriver {
 	readonly productName = 'Arcadia'
 	readonly gpiActiveLow = true
 	readonly supportsGpiTrigger = true
-	readonly testedVersions: readonly string[] = []
+	readonly testedVersions = ['4.2.83.11']
 	readonly http: HttpClient
 	sample?: (key: string, data: unknown) => void
 
