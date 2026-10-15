@@ -3,7 +3,7 @@ import type {
 	CompanionInputFieldTextInput,
 	DropdownChoice,
 } from '@companion-module/base'
-import { packRoles, packs } from './resolve.js'
+import { packRoles, packs, SELECTED_TARGET } from './resolve.js'
 import type { DeviceState } from './state.js'
 import type { Port } from './types.js'
 
@@ -20,13 +20,16 @@ export const KEY_CHOICES: DropdownChoice[] = [
 // Choice labels only use ids and configured labels, never live status, so devices going in and out of range do
 // not force a rebuild of every definition. Live status is shown through variables and feedbacks instead.
 
-/** Roles first (target whoever holds the role), then physical devices as a fallback. */
+/**
+ * The role selected for the role detail page, then roles (target whoever holds the role), then physical
+ * devices as a fallback.
+ */
 export function targetChoices(state: DeviceState): DropdownChoice<string>[] {
 	const roles = packRoles(state).map((r) => ({ id: `r:${r.id}`, label: r.label }))
 	const devices = packs(state)
 		.sort((a, b) => a.label.localeCompare(b.label))
 		.map((e) => ({ id: `p:${e.id}`, label: `Device ${e.label}` }))
-	return [...roles, ...devices]
+	return [{ id: SELECTED_TARGET, label: 'Selected role (role detail page)' }, ...roles, ...devices]
 }
 
 export function roleChoices(state: DeviceState): DropdownChoice<number>[] {

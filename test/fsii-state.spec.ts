@@ -16,9 +16,16 @@ import {
 	resolveTargets,
 	talkingKeys,
 } from '../src/resolve.js'
-import { computeVariableValues } from '../src/variables.js'
+import { computeVariableValues, type VariableOptions } from '../src/variables.js'
 import { normalizeFsiiRole } from '../src/drivers/fsii.js'
 import type { ConnectionLiveStatus, Endpoint, EndpointUpdatedEvent, Participant } from '../src/types.js'
+
+const opts = (lowBattery: number): VariableOptions => ({
+	lowBattery,
+	good: 30,
+	poor: 20,
+	nav: { seq: 0, surface: '', page: '' },
+})
 
 const fixture = <T>(name: string): T =>
 	JSON.parse(readFileSync(new URL(`./fixtures/fsii/${name}.json`, import.meta.url), 'utf8')) as T
@@ -110,7 +117,7 @@ describe('FSII state', () => {
 		expect(s.lastCall).toBe(first)
 		s.applyEndpointUpdate(off.data)
 		expect(channelCallers(s, 2)).toEqual([])
-		expect(computeVariableValues(s, true, 20).last_caller).toBe('Companion')
+		expect(computeVariableValues(s, true, opts(20)).last_caller).toBe('Companion')
 	})
 
 	it('leaves the channel blank for calls Companion did not send on a channel', () => {
@@ -210,7 +217,7 @@ describe('FSII resolve', () => {
 
 describe('FSII variables', () => {
 	it('computes pack, role and channel values', () => {
-		const v = computeVariableValues(loadedState(), true, 95)
+		const v = computeVariableValues(loadedState(), true, opts(95))
 		expect(v.packs_online).toBe(11)
 		expect(v.packs_total).toBe(20)
 		expect(v.r35_label).toBe('Role 35')
@@ -224,6 +231,6 @@ describe('FSII variables', () => {
 	})
 
 	it('reports disconnected state', () => {
-		expect(computeVariableValues(new DeviceState(), false, 20).base_state).toBe('Disconnected')
+		expect(computeVariableValues(new DeviceState(), false, opts(20)).base_state).toBe('Disconnected')
 	})
 })

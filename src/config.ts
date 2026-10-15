@@ -10,6 +10,12 @@ export type ModuleConfig = {
 	lowBattery: number
 	rmkAllEnabled: boolean
 	invertGpi: boolean
+	/** Companion page the role detail presets are placed on (0 = do not switch pages). */
+	detailPage: number
+	/** RSSI from which the signal counts as solid (3 bars). */
+	rssiGood: number
+	/** RSSI below which the signal is poor (1 bar). */
+	rssiPoor: number
 }
 
 export type ModuleSecrets = {
@@ -25,6 +31,9 @@ export const DEFAULT_CONFIG: ModuleConfig = {
 	lowBattery: 20,
 	rmkAllEnabled: false,
 	invertGpi: false,
+	detailPage: 0,
+	rssiGood: 30,
+	rssiPoor: 20,
 }
 
 /** Hostname or IPv4 address, optionally with a port (e.g. for a simulator on 127.0.0.1:8080). */
@@ -113,6 +122,39 @@ export function GetConfigFields(): SomeCompanionConfigField[] {
 			tooltip: 'Off by default so a stray button press cannot mute the whole crew',
 			width: 4,
 			default: DEFAULT_CONFIG.rmkAllEnabled,
+		},
+		{
+			type: 'number',
+			id: 'rssiGood',
+			label: 'RSSI: solid signal from',
+			tooltip:
+				'Signal meters show 3 bars from here and 4 bars from 10 above. Clear-Com recommends 30 or more on DECT beltpacks.',
+			width: 4,
+			min: 1,
+			max: 100,
+			default: DEFAULT_CONFIG.rssiGood,
+		},
+		{
+			type: 'number',
+			id: 'rssiPoor',
+			label: 'RSSI: poor signal below',
+			tooltip: 'Below this the signal meter shows 1 red bar (drop-outs likely)',
+			width: 4,
+			min: 0,
+			max: 100,
+			default: DEFAULT_CONFIG.rssiPoor,
+		},
+		{
+			type: 'number',
+			id: 'detailPage',
+			label: 'Role detail page (Companion page number, 0 = off)',
+			tooltip:
+				'The page you placed the "Role detail" presets on. A short press on a role tile then asks Companion to ' +
+				'switch to this page, through a trigger on $(<label>:nav_seq) (see the module help).',
+			width: 4,
+			min: 0,
+			max: 999,
+			default: DEFAULT_CONFIG.detailPage,
 		},
 		{
 			type: 'checkbox',

@@ -1,4 +1,4 @@
-import type { CompanionActionDefinitions } from '@companion-module/base'
+import type { CompanionActionDefinitions, CompanionInputFieldDropdown } from '@companion-module/base'
 import type ModuleInstance from './main.js'
 import {
 	connectionChoices,
@@ -11,6 +11,7 @@ import {
 	targetFields,
 } from './choices.js'
 import {
+	assignableRoles,
 	channelParticipants,
 	endpointForParticipant,
 	gpioActive,
@@ -22,8 +23,11 @@ import {
 	packs,
 	portChannels,
 	portForParticipant,
+	packRoles,
+	packsForRole,
 	portInChannel,
 	resolveTargets,
+	rolesInUse,
 } from './resolve.js'
 import type { DeviceDriver } from './drivers/driver.js'
 import type { ActiveCall } from './main.js'
@@ -42,6 +46,32 @@ export type ActionsSchema = {
 	port_call: { options: { port: number; mode: 'on' | 'off' | 'pulse'; pulseMs: number } }
 	gpo_set: { options: { gpo: number; mode: 'on' | 'off' | 'toggle' | 'release' } }
 	gpi_trigger: { options: { gpi: number; mode: 'on' | 'off' | 'toggle' } }
+	select_role: { options: { role: number; open: boolean } }
+	select_step: { options: { direction: Direction } }
+	detail_back: { options: Record<string, never> }
+	assign_step: { options: { direction: Direction } }
+	assign_apply: { options: Record<string, never> }
+}
+
+type Direction = 'prev' | 'next'
+
+const DIRECTION_OPTION: CompanionInputFieldDropdown<'direction', Direction> = {
+	id: 'direction',
+	type: 'dropdown',
+	label: 'Direction',
+	default: 'next',
+	choices: [
+		{ id: 'prev', label: 'Previous' },
+		{ id: 'next', label: 'Next' },
+	],
+}
+
+/** The item after (or before) `current` in `list`, wrapping around; the first (last) one when `current` is not in it. */
+function step<T>(list: T[], current: T | undefined, direction: Direction): T | undefined {
+	if (!list.length) return undefined
+	const i = current === undefined ? -1 : list.indexOf(current)
+	if (i < 0) return direction === 'next' ? list[0] : list[list.length - 1]
+	return list[(i + (direction === 'next' ? 1 : list.length - 1)) % list.length]
 }
 
 const PULSE_OPTION = {
@@ -397,6 +427,79 @@ export function UpdateActions(self: ModuleInstance): void {
 				const current = gpioActive(state, 'gpo', state.gpos.get(options.gpo))
 				const enabled = options.mode === 'release' ? null : options.mode === 'toggle' ? !current : options.mode === 'on'
 				await driver.setGpo(options.gpo, enabled).catch((err) => self.log('warn', `GPO failed: ${errMsg(err)}`))
+			},
+		},
+
+		select_role: {
+			name: 'Role detail: show a role',
+			description:
+				'Select the role the "Role detail" presets show. With "Open the detail page", the module also asks ' +
+				'Companion to switch this surface to the detail page set in the connection (needs the page trigger, see help).',
+			options: [
+				{ id: 'role', type: 'dropdown', label: 'Role', choices: roles, default: firstId(roles, 0) },
+				{ id: 'open', type: 'checkbox', label: 'Open the detail page', default: true },
+			],
+			callback: ({ options, surfaceId }) => {
+				if (!state.roles.has(options.role)) return self.log('warn', `Role detail: role ${options.role} not found`)
+				self.selectRole(options.role)
+				if (options.open && self.config.detailPage > 0) self.requestPage(surfaceId, self.config.detailPage)
+			},
+		},
+
+		select_step: {
+			name: 'Role detail: previous / next role',
+			description: 'Step through the roles in use (all roles when none is in use)',
+			options: [DIRECTION_OPTION],
+			callback: ({ options }) => {
+				const list = rolesInUse(state)
+				const ids = (list.length ? list : packRoles(state)).map((r) => r.id)
+				const next = step(ids, state.selectedRole, options.direction)
+				if (next !== undefined) self.selectRole(next)
+			},
+		},
+
+		detail_back: {
+			name: 'Role detail: back to the previous page',
+			description: 'Asks Companion to switch this surface back (needs the page trigger, see help)',
+			options: [],
+			callback: ({ surfaceId }) => self.requestPage(surfaceId, 'back'),
+		},
+
+		assign_step: {
+			name: 'Role detail: pick the role to assign',
+			description:
+				'Step through the roles the device of the selected role can take. Apply with "assign the picked role".',
+			options: [DIRECTION_OPTION],
+			callback: ({ options }) => {
+				const selected = state.selectedRole
+				const device = selected === undefined ? undefined : packsForRole(state, selected)[0]
+				if (!device) return self.log('info', 'Assign role: no device holds the selected role')
+				const ids = assignableRoles(state, device).map((r) => r.id)
+				state.assignRole = step(ids, state.assignRole ?? selected, options.direction)
+				self.touch()
+			},
+		},
+
+		assign_apply: {
+			name: 'Role detail: assign the picked role to the device',
+			description: 'Moves the device of the selected role to the role picked with "pick the role to assign"',
+			options: [],
+			callback: async () => {
+				const selected = state.selectedRole
+				const pick = state.assignRole === undefined ? undefined : state.roles.get(state.assignRole)
+				const device = selected === undefined ? undefined : packsForRole(state, selected)[0]
+				if (!device || !pick || pick.id === selected) return self.log('info', 'Assign role: no other role picked')
+				const driver = driverFor('Assign role')
+				if (!driver) return
+				try {
+					await driver.changeRole(device, pick)
+				} catch (err) {
+					return self.log('warn', `Assign role ${pick.label} to ${device.label} failed: ${errMsg(err)}`)
+				}
+				self.log('info', `Assigned role ${pick.label} to ${device.label}`)
+				// the detail page follows the device to its new role
+				self.selectRole(pick.id)
+				self.refresh('endpoints')
 			},
 		},
 

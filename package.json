@@ -1,6 +1,6 @@
 {
 	"name": "clearcom-freespeakii",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"description": "Bitfocus Companion module for Clear-Com Arcadia Central Station and FreeSpeak II base stations",
 	"main": "dist/main.js",
 	"type": "module",

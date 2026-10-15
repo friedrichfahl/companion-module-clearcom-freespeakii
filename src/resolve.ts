@@ -71,6 +71,24 @@ export function packRoles(state: DeviceState): Role[] {
 		.sort((a, b) => byLabel.compare(a.label, b.label) || a.id - b.id)
 }
 
+/** Roles held by at least one device, by label. */
+export function rolesInUse(state: DeviceState): Role[] {
+	return packRoles(state).filter((r) => packsForRole(state, r.id).length > 0)
+}
+
+/**
+ * Roles a device can be switched to: FreeSpeak II roles of its device type; Arcadia rolesets with a keyset for
+ * its device type (or without any keysets the module knows of).
+ */
+export function assignableRoles(state: DeviceState, e: Endpoint): Role[] {
+	const aliases = KEYSET_TYPE_ALIASES[e.type] ?? [e.type]
+	return packRoles(state).filter((r) => {
+		if (r.type) return r.type === e.type
+		const types = Object.keys(r.keys)
+		return !types.length || types.includes('*') || aliases.some((t) => types.includes(t))
+	})
+}
+
 /** All devices using a role. Online devices first. */
 export function packsForRole(state: DeviceState, roleId: number): Endpoint[] {
 	return packs(state)
@@ -116,8 +134,14 @@ export function participantName(state: DeviceState, p: Participant): string {
 
 // --- target selection -------------------------------------------------------------------------
 
-/** Dropdown ids: `r:<roleId>` targets whichever device holds a role, `p:<endpointId>` a physical device. */
-export type TargetId = `r:${number}` | `p:${number}`
+/**
+ * Dropdown ids: `r:<roleId>` targets whichever device holds a role, `p:<endpointId>` a physical device, and
+ * `sel` the role selected for the role detail page.
+ */
+export type TargetId = `r:${number}` | `p:${number}` | typeof SELECTED_TARGET
+
+/** Target id of the role selected for the detail page. */
+export const SELECTED_TARGET = 'sel'
 
 /**
  * Resolve dropdown targets plus an optional free-text list ("Camera 1, Stage Left, 12345") to devices.
@@ -128,6 +152,10 @@ export function resolveTargets(state: DeviceState, targets: unknown, names?: unk
 	const add = (list: Endpoint[]) => list.forEach((e) => out.set(e.id, e))
 
 	for (const t of Array.isArray(targets) ? targets : []) {
+		if (t === SELECTED_TARGET) {
+			if (state.selectedRole !== undefined) add(packsForRole(state, state.selectedRole))
+			continue
+		}
 		const m = /^([rp]):(\d+)$/.exec(String(t))
 		if (!m) continue
 		const id = Number(m[2])
@@ -158,6 +186,74 @@ export function roleKeysFor(role: Role | undefined, endpointType: string): RoleK
 	if (!role) return undefined
 	for (const t of KEYSET_TYPE_ALIASES[endpointType] ?? [endpointType]) if (role.keys[t]) return role.keys[t]
 	return role.keys['*'] ?? Object.values(role.keys)[0]
+}
+
+/** What a key talks to: a channel, a role (direct key) or a port. */
+export type KeyTarget = { kind: 'channel' | 'role' | 'port'; id: number; label: string }
+
+/** The first thing a key is assigned to that the module knows: a channel, a role in use or a port. */
+export function keyTarget(state: DeviceState, entities: string[]): KeyTarget | undefined {
+	for (const res of entities) {
+		const channelId = /\/connections\/(\d+)$/.exec(res)?.[1]
+		const channel = channelId ? state.connections.get(Number(channelId)) : undefined
+		if (channel) return { kind: 'channel', id: channel.id, label: channel.label }
+		const roleId = /\/(?:rolesets|roles)\/(\d+)$/.exec(res)?.[1]
+		const role = roleId ? state.roles.get(Number(roleId)) : undefined
+		if (role && packRoles(state).includes(role)) return { kind: 'role', id: role.id, label: role.label }
+		const port = [...state.ports.values()].find((p) => p.res === res)
+		if (port) return { kind: 'port', id: port.port_id, label: port.port_label }
+	}
+	return undefined
+}
+
+/** One key of a role as shown on buttons. */
+export interface KeySlot {
+	/** 0-based key index (as in the device's key states). */
+	index: number
+	/** Short key name: A-D on FreeSpeak II, 1-n elsewhere, R for the reply key. */
+	name: string
+	isReply: boolean
+	/** What the key talks to; undefined for the reply key and for unassigned keys. */
+	target: KeyTarget | undefined
+	/** The target's label, "Reply", or "—" when nothing is assigned. */
+	label: string
+}
+
+/**
+ * The keys of a role on the device holding it. From the role's key layout for that device type when known;
+ * otherwise FreeSpeak II packs get keys A-D and a reply key, other devices as many keys as they report.
+ */
+export function roleKeySlots(state: DeviceState, role: Role, holder: Endpoint | undefined): KeySlot[] {
+	const type = holder?.type ?? ''
+	const letters = type === 'FSII-BP'
+	const name = (i: number, reply: boolean) => (reply ? 'R' : letters && i < 4 ? 'ABCD'[i] : String(i + 1))
+	const keys = roleKeysFor(role, type)
+	if (keys?.length) {
+		return [...keys]
+			.sort((a, b) => a.index - b.index)
+			.map((k) => {
+				const reply = k.isReply || (holder !== undefined && isReplyKey(state, holder, k.index))
+				const target = reply ? undefined : keyTarget(state, k.entities)
+				return {
+					index: k.index,
+					name: name(k.index, reply),
+					isReply: reply,
+					target,
+					label: reply ? 'Reply' : (target?.label ?? '—'),
+				}
+			})
+	}
+	const count = type === 'FSII-BP' ? FSII_REPLY_KEY + 1 : keyStates(holder).length
+	return Array.from({ length: count }, (_, i) => {
+		const reply = type === 'FSII-BP' && i === FSII_REPLY_KEY
+		return {
+			index: i,
+			name: name(i, reply),
+			isReply: reply,
+			target: undefined,
+			label: reply ? 'Reply' : `Key ${name(i, reply)}`,
+		}
+	})
 }
 
 /** One key of a device, with its 0-based key index. */
@@ -195,6 +291,9 @@ export function keyStates(e: Endpoint | undefined): IndexedKeyState[] {
 export const isKeyTalking = (k: KeyState): boolean =>
 	typeof k.currentState === 'string' && k.currentState.toLowerCase().includes('talk')
 
+export const isKeyListening = (k: KeyState): boolean =>
+	typeof k.currentState === 'string' && k.currentState.toLowerCase().includes('listen')
+
 export function isReplyKey(state: DeviceState, e: Endpoint, index: number): boolean {
 	const roleId = packRoleId(e, state)
 	const keys = roleKeysFor(roleId === undefined ? undefined : state.roles.get(roleId), e.type)
@@ -214,6 +313,25 @@ export function isTalking(state: DeviceState, e: Endpoint, key: KeySelector = 'a
 		if (key === 'reply') return isReplyKey(state, e, idx)
 		return idx === key
 	})
+}
+
+/** Whether a key of a device is listening ('listen' or 'talk+listen'). */
+export function isListening(state: DeviceState, e: Endpoint, key: KeySelector = 'any'): boolean {
+	if (!isOnline(e)) return false
+	return keyStates(e).some(({ k, idx }) => {
+		if (!isKeyListening(k)) return false
+		if (key === 'any') return true
+		if (key === 'reply') return isReplyKey(state, e, idx)
+		return idx === key
+	})
+}
+
+/** The live state of one key (by 0-based index): 'talk', 'listen', 'off', or '' when the device does not report it. */
+export function keyState(e: Endpoint | undefined, index: number): 'talk' | 'listen' | 'off' | '' {
+	if (!e || !isOnline(e)) return ''
+	const k = keyStates(e).find((s) => s.idx === index)?.k
+	if (!k) return ''
+	return isKeyTalking(k) ? 'talk' : isKeyListening(k) ? 'listen' : 'off'
 }
 
 /** Keys currently talking, e.g. "1,R" (1-based, R = reply). */
@@ -237,6 +355,42 @@ export function batteryLevel(e: Endpoint): number | undefined {
 export function rssi(e: Endpoint): number | undefined {
 	const v = e.liveStatus?.RSSI ?? e.liveStatus?.rssi
 	return isOnline(e) && typeof v === 'number' ? v : undefined
+}
+
+export interface SignalThresholds {
+	/** RSSI from which the signal is solid (3 bars; 4 bars from 10 above). */
+	good: number
+	/** RSSI below which the signal is poor (1 bar). */
+	poor: number
+}
+
+/**
+ * Signal bars (1-4) for an RSSI, 0 when unknown. FreeSpeak II / CellCom DECT packs report RSSI on a 0-~60 scale
+ * (Clear-Com: 30+ solid, 20-25 only in passing, below 15 unusable). A negative value is taken as dBm.
+ */
+export function signalBars(value: number | undefined, t: SignalThresholds): number {
+	if (value === undefined) return 0
+	if (value < 0) return value >= -60 ? 4 : value >= -70 ? 3 : value >= -80 ? 2 : 1
+	if (value >= t.good + 10) return 4
+	if (value >= t.good) return 3
+	if (value >= t.poor) return 2
+	return 1
+}
+
+/** Frame error rate as reported (FreeSpeak II: lost / corrupted audio frames), while online. */
+export function frameErrors(e: Endpoint): number | undefined {
+	const v = e.liveStatus?.frameErrorRate
+	return isOnline(e) && typeof v === 'number' ? v : undefined
+}
+
+/** The antenna (transceiver) a wireless device is connected through: its label, or its number. */
+export function antennaName(state: DeviceState, e: Endpoint): string {
+	const index = e.liveStatus?.antennaIndex
+	if (!isOnline(e) || typeof index !== 'number') return ''
+	const gateways = [...state.endpoints.values()].filter(isGateway).sort((a, b) => a.id - b.id)
+	// FSII numbers transceivers from 0 in the order the base lists them; use the label when it lines up
+	const gw = gateways[index]
+	return gw?.label || `Antenna ${index + 1}`
 }
 
 export function linkQuality(e: Endpoint): number | undefined {

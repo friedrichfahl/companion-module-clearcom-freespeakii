@@ -1,10 +1,11 @@
 import { InstanceBase, InstanceStatus, type SomeCompanionConfigField } from '@companion-module/base'
 import { DEFAULT_CONFIG, GetConfigFields, type ModuleConfig, type ModuleSecrets } from './config.js'
-import { UpdateVariableDefinitions, computeVariableValues, type VariablesSchema } from './variables.js'
+import { UpdateVariableDefinitions, computeVariableValues, type NavRequest, type VariablesSchema } from './variables.js'
 import { UpgradeScripts } from './upgrades.js'
 import { UpdateActions, type ActionsSchema } from './actions.js'
 import { UpdateFeedbacks, type FeedbacksSchema } from './feedbacks.js'
 import { UpdatePresets } from './presets.js'
+import { CompositeElements, type CompositeElementsSchema } from './graphics.js'
 import { ArcadiaDriver } from './drivers/arcadia.js'
 import { FsiiDriver } from './drivers/fsii.js'
 import type { DeviceDriver } from './drivers/driver.js'
@@ -20,7 +21,7 @@ export type ModuleSchema = {
 	actions: ActionsSchema
 	feedbacks: FeedbacksSchema
 	variables: VariablesSchema
-	compositeElements: Record<string, never>
+	compositeElements: CompositeElementsSchema
 }
 
 export { UpgradeScripts }
@@ -85,6 +86,9 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 	/** Calls turned on by hold-style actions (on / off), keyed by what was called. */
 	activeCalls = new Map<string, ActiveCall>()
 
+	/** The last page switch the module asked for (see `requestPage`). */
+	nav: NavRequest = { seq: 0, surface: '', page: '' }
+
 	#socket: DeviceSocket | null = null
 	#timers = new Map<NodeJS.Timeout, ScheduledTask>()
 	#debounces = new Map<string, { timer: NodeJS.Timeout; first: number }>()
@@ -114,6 +118,7 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 
 	async init(config: ModuleConfig, _isFirstInit: boolean, secrets: ModuleSecrets | undefined): Promise<void> {
 		this.#applyConfig(config, secrets)
+		this.setCompositeElementDefinitions(CompositeElements)
 		this.#defineAll()
 		this.#start()
 	}
@@ -149,6 +154,30 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 			void fn()
 		}, ms)
 		this.#timers.set(t, { fn, flushOnStop })
+	}
+
+	/**
+	 * Ask Companion to switch the surface that pressed a button to another page. Modules cannot switch pages
+	 * themselves, so this only updates the nav_* variables: a Companion trigger on `nav_seq` runs
+	 * "Surface: Set to page" with `$(label:nav_surface)` and `$(label:nav_page)`.
+	 */
+	requestPage(surfaceId: string | undefined, page: number | 'back'): void {
+		// a trigger or a press without a surface (e.g. from the API) has no page to switch
+		if (!surfaceId || surfaceId.startsWith('trigger')) return
+		this.nav = { seq: this.nav.seq + 1, surface: surfaceId, page: String(page) }
+		this.#apply({ live: true, structure: false })
+	}
+
+	/** Select the role shown on the role detail page (undefined: none). */
+	selectRole(roleId: number | undefined): void {
+		if (this.state.selectedRole !== roleId) this.state.assignRole = undefined
+		this.state.selectedRole = roleId
+		this.#apply({ live: true, structure: false })
+	}
+
+	/** Redraw after a change made in Companion (selection, picked role). */
+	touch(): void {
+		this.#apply({ live: true, structure: false })
 	}
 
 	/** Refetch one part of the state from the device (debounced). */
@@ -600,7 +629,12 @@ export default class ModuleInstance extends InstanceBase<ModuleSchema> {
 	}
 
 	#redraw(): void {
-		const values = computeVariableValues(this.state, this.socketConnected, this.config.lowBattery)
+		const values = computeVariableValues(this.state, this.socketConnected, {
+			lowBattery: this.config.lowBattery,
+			good: this.config.rssiGood,
+			poor: this.config.rssiPoor,
+			nav: this.nav,
+		})
 		const changed: VariablesSchema = {}
 		for (const [k, val] of Object.entries(values)) {
 			// new roles/channels get values once their definitions are in (structure changes are debounced)

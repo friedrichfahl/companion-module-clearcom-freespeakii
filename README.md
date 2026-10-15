@@ -1,7 +1,8 @@
 # companion-module-clearcom-freespeakii
 
 Bitfocus Companion module for the Clear-Com **Arcadia Central Station** and the **FreeSpeak II base station**
-(FSII-BASE-II). It needs **Companion 5.1 or newer** (module API 2.2, Node 22): the presets use layered buttons with gauges.
+(FSII-BASE-II). It needs **Companion 5.1 or newer** (module API 2.2, Node 22): the presets are layered buttons
+with gauges, composite elements, internal feedbacks, `oscillate()` animations and a template group.
 
 - User documentation: [HELP.md](./companion/HELP.md)
 - License: [LICENSE](./LICENSE)
@@ -56,6 +57,7 @@ The Arcadia driver has been tested against a real Arcadia Central Station on fir
 | `src/resolve.ts`                                               | Tolerant accessors for both payload shapes, role → device resolution, tallies               |
 | `src/main.ts`                                                  | Lifecycle, event routing, debounced refresh/redraw, heartbeat, reboot detection             |
 | `src/actions.ts`, `feedbacks.ts`, `variables.ts`, `presets.ts` | Companion definitions, rebuilt when roles, channels or ports change                         |
+| `src/graphics.ts`                                              | Palette, element helpers and the composite elements (battery meter, signal bars)            |
 | `tools/simulator/`                                             | Arcadia + FreeSpeak II simulator (REST + socket.io 2)                                       |
 | `test/`                                                        | Unit tests on real FSII captures, plus end-to-end tests of the module against the simulator |
 
@@ -97,3 +99,16 @@ node tools/simulator/simulator.mjs --mode arcadia --firmware 4.2   # payload for
 ```
 
 In Companion, use host `127.0.0.1:8080` (or the simulator machine's IP).
+
+### Checking the presets by eye
+
+`test/render-dump.spec.ts` (skipped unless `RENDER_DUMP` is set) runs the module against the simulator in a few
+live situations and writes every preset, the variable values and every feedback result to JSON:
+
+```bash
+RENDER_DUMP=/tmp/presets.json yarn vitest run test/render-dump.spec.ts
+```
+
+Feed that to a small script inside a Companion checkout that converts the presets with Companion's own
+`ConvertLayerPresetElements` / `ConvertSomeButtonGraphicsElementForDrawing` and draws them with
+`GraphicsLayeredButtonRenderer`, to get contact sheets that look exactly like the buttons.

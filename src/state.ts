@@ -59,6 +59,13 @@ export class DeviceState {
 	ready = false
 	/** GPI `liveStatus.status` is false while asserted (Arcadia), possibly inverted by the user. */
 	gpiActiveLow = false
+	/**
+	 * The role shown on the role detail page (not device state: chosen in Companion). Actions and feedbacks reach
+	 * it through the `sel` target.
+	 */
+	selectedRole: number | undefined = undefined
+	/** The role picked on the detail page for the selected role's device, before it is applied. */
+	assignRole: number | undefined = undefined
 
 	#endpointJson = new Map<number, string>()
 	#roleIdByGid = new Map<string, number>()

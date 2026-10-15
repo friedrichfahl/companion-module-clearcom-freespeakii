@@ -26,6 +26,7 @@ export class Harness {
 	feedbacks: Record<string, AnyDef | undefined> = {}
 	presets: Record<string, unknown> = {}
 	presetStructure: unknown[] = []
+	compositeElements: Record<string, unknown> = {}
 	variableDefs: Record<string, { name: string }> = {}
 	variables: Record<string, unknown> = {}
 	readonly instance: ModuleInstance
@@ -53,6 +54,7 @@ export class Harness {
 				this.presetStructure = structure
 				this.presets = presets
 			},
+			setCompositeElementDefinitions: (c: Record<string, unknown>) => (this.compositeElements = c),
 			setVariableDefinitions: (d: Record<string, { name: string }>) => (this.variableDefs = d),
 			setVariableValues: (v: Record<string, unknown>) => Object.assign(this.variables, v),
 			getVariableValue: (id: string) => this.variables[id],
@@ -76,11 +78,11 @@ export class Harness {
 		await this.instance.configUpdated({ ...DEFAULT_CONFIG, ...config }, secrets)
 	}
 
-	async action(id: string, options: Record<string, unknown>): Promise<void> {
+	async action(id: string, options: Record<string, unknown>, surfaceId?: string): Promise<void> {
 		const def = this.actions[id]
 		if (!def) throw new Error(`No action ${id}`)
 		await def.callback(
-			{ id: 'action-1', actionId: id, controlId: 'bank:1', options, previousOptions: null, surfaceId: undefined },
+			{ id: 'action-1', actionId: id, controlId: 'bank:1', options, previousOptions: null, surfaceId },
 			{},
 		)
 	}

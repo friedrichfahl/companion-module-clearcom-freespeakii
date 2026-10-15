@@ -1,4 +1,5 @@
-import { combineRgb, type CompanionFeedbackDefinitions } from '@companion-module/base'
+import type { CompanionFeedbackDefinitions } from '@companion-module/base'
+import { PALETTE } from './graphics.js'
 import type ModuleInstance from './main.js'
 import {
 	connectionChoices,
@@ -16,21 +17,29 @@ import {
 	channelTalkers,
 	gpioActive,
 	isCalling,
+	isListening,
 	isOnline,
 	isTalking,
 	linkQuality,
 	lowBatteryPacks,
 	missingRoles,
 	packs,
+	packsForRole,
 	portInChannel,
 	resolveTargets,
+	roleKeySlots,
 	type KeySelector,
 } from './resolve.js'
+import { DETAIL_KEYS } from './variables.js'
 
 type Targets = { targets: string[]; names: string }
 
 export type FeedbacksSchema = {
 	role_talking: { type: 'boolean'; options: Targets & { key: string | number } }
+	role_listening: { type: 'boolean'; options: Targets & { key: string | number } }
+	role_selected: { type: 'boolean'; options: { role: number } }
+	assign_pending: { type: 'boolean'; options: Record<string, never> }
+	selected_key_exists: { type: 'boolean'; options: { key: number } }
 	role_online: { type: 'boolean'; options: Targets }
 	role_calling: { type: 'boolean'; options: Targets }
 	role_battery_below: { type: 'boolean'; options: Targets & { threshold: number } }
@@ -46,17 +55,13 @@ export type FeedbacksSchema = {
 	base_connected: { type: 'boolean'; options: Record<string, never> }
 }
 
-export const COLORS = {
-	white: combineRgb(255, 255, 255),
-	black: combineRgb(0, 0, 0),
-	red: combineRgb(200, 0, 0),
-	green: combineRgb(0, 150, 0),
-	amber: combineRgb(255, 170, 0),
-	orange: combineRgb(230, 90, 0),
-	grey: combineRgb(60, 60, 60),
-	dimText: combineRgb(140, 140, 140),
-	darkRed: combineRgb(90, 0, 0),
-	darkGreen: combineRgb(0, 60, 0),
+/** Default feedback styles, in the presets' palette. */
+const STYLE = {
+	talk: { bgcolor: PALETTE.talk, color: PALETTE.white },
+	call: { bgcolor: PALETTE.call, color: PALETTE.callText },
+	ok: { bgcolor: PALETTE.ok, color: PALETTE.white },
+	warn: { bgcolor: PALETTE.warn, color: PALETTE.white },
+	info: { bgcolor: PALETTE.info, color: PALETTE.white },
 }
 
 export function toKeySelector(key: unknown): KeySelector {
@@ -92,31 +97,67 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 		role_talking: {
 			type: 'boolean',
 			name: 'Role / device is talking',
-			defaultStyle: { bgcolor: COLORS.red, color: COLORS.white },
+			defaultStyle: STYLE.talk,
 			options: [...targetOptions, { id: 'key', type: 'dropdown', label: 'Key', choices: KEY_CHOICES, default: 'any' }],
 			callback: ({ options }) => {
 				const key = toKeySelector(options.key)
 				return packsFor(options).some((e) => isTalking(state, e, key))
 			},
 		},
+		role_listening: {
+			type: 'boolean',
+			name: 'Role / device key is listening',
+			description: 'The key is in listen (or talk + listen) state',
+			defaultStyle: STYLE.ok,
+			options: [...targetOptions, { id: 'key', type: 'dropdown', label: 'Key', choices: KEY_CHOICES, default: 'any' }],
+			callback: ({ options }) => {
+				const key = toKeySelector(options.key)
+				return packsFor(options).some((e) => isListening(state, e, key))
+			},
+		},
+		role_selected: {
+			type: 'boolean',
+			name: 'Role is shown on the role detail page',
+			defaultStyle: STYLE.info,
+			options: [{ id: 'role', type: 'dropdown', label: 'Role', choices: roles, default: firstId(roles, 0) }],
+			callback: ({ options }) => state.selectedRole === options.role,
+		},
+		selected_key_exists: {
+			type: 'boolean',
+			name: 'Role detail: the selected role has this key',
+			defaultStyle: STYLE.ok,
+			options: [{ id: 'key', type: 'number', label: 'Key number (1 = first)', default: 1, min: 1, max: DETAIL_KEYS }],
+			callback: ({ options }) => {
+				const role = state.selectedRole === undefined ? undefined : state.roles.get(state.selectedRole)
+				if (!role) return false
+				return roleKeySlots(state, role, packsForRole(state, role.id)[0]).length >= options.key
+			},
+		},
+		assign_pending: {
+			type: 'boolean',
+			name: 'Role detail: another role is picked to assign',
+			defaultStyle: STYLE.call,
+			options: [],
+			callback: () => state.assignRole !== undefined && state.assignRole !== state.selectedRole,
+		},
 		role_online: {
 			type: 'boolean',
 			name: 'Role / device is online',
-			defaultStyle: { bgcolor: COLORS.green, color: COLORS.white },
+			defaultStyle: STYLE.ok,
 			options: [...targetOptions],
 			callback: ({ options }) => packsFor(options).some(isOnline),
 		},
 		role_calling: {
 			type: 'boolean',
 			name: 'Role / device has a call signal active',
-			defaultStyle: { bgcolor: COLORS.amber, color: COLORS.black },
+			defaultStyle: STYLE.call,
 			options: [...targetOptions],
 			callback: ({ options }) => packsFor(options).some(isCalling),
 		},
 		role_battery_below: {
 			type: 'boolean',
 			name: 'Role / device battery below threshold',
-			defaultStyle: { bgcolor: COLORS.orange, color: COLORS.white },
+			defaultStyle: STYLE.warn,
 			options: [...targetOptions, thresholdOption('Battery below (%)', 20)],
 			callback: ({ options }) =>
 				packsFor(options).some((e) => {
@@ -127,7 +168,7 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 		role_signal_below: {
 			type: 'boolean',
 			name: 'Role / device link quality below threshold',
-			defaultStyle: { bgcolor: COLORS.orange, color: COLORS.white },
+			defaultStyle: STYLE.warn,
 			options: [...targetOptions, thresholdOption('Link quality below', 30)],
 			callback: ({ options }) =>
 				packsFor(options).some((e) => {
@@ -138,7 +179,7 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 		channel_talking: {
 			type: 'boolean',
 			name: 'Channel: someone is talking',
-			defaultStyle: { bgcolor: COLORS.red, color: COLORS.white },
+			defaultStyle: STYLE.talk,
 			options: [connectionOption],
 			callback: ({ options }) => state.ready && channelTalkers(state, options.connection).length > 0,
 		},
@@ -146,14 +187,14 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 			type: 'boolean',
 			name: 'Channel: someone is calling',
 			description: 'A member device or port has a call signal active',
-			defaultStyle: { bgcolor: COLORS.amber, color: COLORS.black },
+			defaultStyle: STYLE.call,
 			options: [connectionOption],
 			callback: ({ options }) => state.ready && channelCallers(state, options.connection).length > 0,
 		},
 		port_in_channel: {
 			type: 'boolean',
 			name: 'Port is routed to channel',
-			defaultStyle: { bgcolor: COLORS.green, color: COLORS.white },
+			defaultStyle: STYLE.ok,
 			options: [
 				{ id: 'port', type: 'dropdown', label: 'Port', choices: ports, default: firstId(ports, 0) },
 				connectionOption,
@@ -163,14 +204,14 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 		any_battery_below: {
 			type: 'boolean',
 			name: 'Any online device battery below threshold',
-			defaultStyle: { bgcolor: COLORS.orange, color: COLORS.white },
+			defaultStyle: STYLE.warn,
 			options: [thresholdOption('Battery below (%)', 20)],
 			callback: ({ options }) => state.ready && lowBatteryPacks(state, options.threshold).length > 0,
 		},
 		any_role_missing: {
 			type: 'boolean',
 			name: 'Any expected role has no device online',
-			defaultStyle: { bgcolor: COLORS.red, color: COLORS.white },
+			defaultStyle: STYLE.talk,
 			options: [
 				{
 					id: 'roles',
@@ -186,28 +227,28 @@ export function UpdateFeedbacks(self: ModuleInstance): void {
 		any_calling: {
 			type: 'boolean',
 			name: 'Any device has a call signal active',
-			defaultStyle: { bgcolor: COLORS.amber, color: COLORS.black },
+			defaultStyle: STYLE.call,
 			options: [],
 			callback: () => state.ready && packs(state).some(isCalling),
 		},
 		gpi_state: {
 			type: 'boolean',
 			name: 'GPI is active',
-			defaultStyle: { bgcolor: COLORS.green, color: COLORS.white },
+			defaultStyle: STYLE.ok,
 			options: [{ id: 'gpi', type: 'dropdown', label: 'GPI', choices: gpis, default: firstId(gpis, 0) }],
 			callback: ({ options }) => gpioActive(state, 'gpi', state.gpis.get(options.gpi)),
 		},
 		gpo_state: {
 			type: 'boolean',
 			name: 'GPO is active',
-			defaultStyle: { bgcolor: COLORS.green, color: COLORS.white },
+			defaultStyle: STYLE.ok,
 			options: [{ id: 'gpo', type: 'dropdown', label: 'GPO', choices: gpos, default: firstId(gpos, 0) }],
 			callback: ({ options }) => gpioActive(state, 'gpo', state.gpos.get(options.gpo)),
 		},
 		base_connected: {
 			type: 'boolean',
 			name: 'Connected to the device',
-			defaultStyle: { bgcolor: COLORS.green, color: COLORS.white },
+			defaultStyle: STYLE.ok,
 			options: [],
 			callback: () => self.socketConnected && state.ready,
 		},

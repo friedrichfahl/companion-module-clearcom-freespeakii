@@ -5,7 +5,7 @@
 	"name": "Clear-Com FreeSpeak II / Arcadia",
 	"shortname": "freespeakii",
 	"description": "Clear-Com Arcadia Central Station and FreeSpeak II base: role tallies, battery/status, call signals, RMK, role and port routing, GPIO",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"license": "MIT",
 	"repository": "git+https://github.com/bitfocus/companion-module-clearcom-freespeakii.git",
 	"bugs": "https://github.com/bitfocus/companion-module-clearcom-freespeakii/issues",
